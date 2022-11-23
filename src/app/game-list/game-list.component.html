@@ -7,12 +7,15 @@
             <th>Precio</th>
             <th>Stock</th>
         </tr>
-        <tr>
+        <tr *ngFor="let game of games" [ngClass]="{'enOferta' : game.oferta}">
             <td><img [src]="game.image" [alt]="game.nombre"></td>
             <td>{{game.nombre}}</td>
             <td>{{game.desarrollador}}</td>
-            <td>${{game.precio}}</td>
-            <td>{{game.stock}}</td>
+            <td>{{game.precio | currency}}</td>
+            <td><span class="badge text-bg-warning" *ngIf="game.stock == 0">Sin Stock</span></td>
+            <td><span class="badge text-bg-success" *ngIf="game.oferta == true">En Oferta</span></td>
+
+            
         </tr>
     </thead>
 </table>
