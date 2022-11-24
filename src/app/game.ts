@@ -4,5 +4,6 @@ export interface game{
     desarrollador : string,
     image: string,
     stock : number,
-    oferta : boolean
+    oferta : boolean,
+    cantidad : number,
 }

@@ -17,14 +17,16 @@ export class GameListComponent implements OnInit {
       image: "assets/uncharted.jpg",
       stock : 40,
       oferta : true,
+      cantidad : 0
     },
     {
       nombre : "Fifa 23",
       precio: 600,
       desarrollador : "Electronics Arts",
       image: "assets/fifa.jpg",
-      stock : 23,
+      stock : 5,
       oferta : true,
+      cantidad : 0
     },
     {
       nombre : "Spider-Man",
@@ -33,9 +35,19 @@ export class GameListComponent implements OnInit {
       image: "assets/spiderman.jpg",
       stock : 0,
       oferta : false,
+      cantidad : 0
     }
   ]
   ngOnInit(): void {
+  }
+  upQuantity(game : game) : void{
+    if(game.cantidad <game.stock)
+    game.cantidad++;
+  }
+  downQuantity(game : game) : void{
+    if(game.cantidad > 0){
+    game.cantidad--;
+    } 
   }
 
 }
