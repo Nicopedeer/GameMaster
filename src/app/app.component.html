@@ -6,16 +6,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="#">Pricing</a>
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['/']">Inicio</a>
+        <a class="nav-link" [routerLink]="['/about']">Contacto</a>
       </div>
     </div>
   </div>
   <div>
-    <div>
-      <div class="col-6"><app-game-list></app-game-list></div>
-      <div class="col-6"></div>
-    </div>
+    <router-outlet></router-outlet>
   </div>
