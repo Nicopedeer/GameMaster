@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { game } from '../game';
+import { Game } from '../Game';
 
 @Component({
   selector: 'app-game-list',
@@ -9,7 +9,7 @@ import { game } from '../game';
 export class GameListComponent implements OnInit {
 
   constructor() { }
-  games : game [] = [
+  games : Game [] = [
     {
       nombre : "Uncharted 4",
       precio: 500,
@@ -40,15 +40,7 @@ export class GameListComponent implements OnInit {
   ]
   ngOnInit(): void {
   }
-  upQuantity(game : game) : void{
-    if(game.cantidad <game.stock)
-    game.cantidad++;
-  }
-  downQuantity(game : game) : void{
-    if(game.cantidad > 0){
-    game.cantidad--;
-    } 
-  }
+  
 
 }
 

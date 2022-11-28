@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { GameMasterAboutComponent } from './game-master-about/game-master-about.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { GameMasterGamesComponent } from './game-master-games/game-master-games.component';
+import { InputNumberComponent } from './input-number/input-number.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { GameMasterGamesComponent } from './game-master-games/game-master-games.
     GameListComponent,
     GameMasterAboutComponent,
     CarritoComponent,
-    GameMasterGamesComponent
+    GameMasterGamesComponent,
+    InputNumberComponent
   ],
   imports: [
     BrowserModule,

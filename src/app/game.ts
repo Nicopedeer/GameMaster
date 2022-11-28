@@ -1,4 +1,4 @@
-export interface game{
+export interface Game{
     nombre : String,
     precio: number,
     desarrollador : string,

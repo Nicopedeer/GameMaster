@@ -15,9 +15,7 @@
             <td>{{game.precio | currency}}</td>
             <td><span class="badge text-bg-warning" *ngIf="game.stock == 0">Sin Stock</span></td>
             <td><span class="badge text-bg-success" *ngIf="game.oferta == true">En Oferta</span></td>
-            <td><button class="btn btn-outline-dark" (click)="upQuantity(game)">+</button>
-                <input type="text" [(ngModel)]="game.cantidad">
-                <button class="btn btn-outline-dark" (click)="downQuantity(game)">-</button></td>
+            <td><app-input-number [game] ="game" *ngIf="game.stock"></app-input-number></td>
 
             
         </tr>
