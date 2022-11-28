@@ -15,7 +15,7 @@
             <td>{{game.precio | currency}}</td>
             <td><span class="badge text-bg-warning" *ngIf="game.stock == 0">Sin Stock</span></td>
             <td><span class="badge text-bg-success" *ngIf="game.oferta == true">En Oferta</span></td>
-            <td><app-input-number [game] ="game" *ngIf="game.stock"></app-input-number></td>
+            <td><app-input-number [(quantity)] ="game.cantidad" [max]="game.stock" *ngIf="game.stock"></app-input-number></td>
 
             
         </tr>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Game } from '../Game';
 
 @Component({
@@ -10,18 +10,28 @@ export class InputNumberComponent implements OnInit {
 
   constructor() { }
   @Input()
-  game : Game;
+  quantity !: number;
+
+  @Input()
+  max !: number;
+
+  @Output()
+  quantityChange : EventEmitter<number> = new EventEmitter<number>;
 
   ngOnInit(): void {
   }
 
-  upQuantity(game : Game) : void{
-    if(game.cantidad <game.stock)
-    game.cantidad++;
+  upQuantity() : void{
+    if(this.quantity < this.max){
+      this.quantity++;
+      this.quantityChange.emit(this.quantity);
+    }
+    
   }
-  downQuantity(game : Game) : void{
-    if(game.cantidad > 0){
-    game.cantidad--;
+  downQuantity() : void{
+    if(this.quantity > 0){
+    this.quantity--;
+    this.quantityChange.emit(this.quantity);
     } 
   }
 }
