@@ -1,1 +1,10 @@
 <h3>carrito de compras</h3>
+<ol class="list-group list-group-numbered">
+    <li *ngFor="let game of listaCompras" class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">{{game.nombre}}</div>
+        {{game.desarrollador}}
+      </div>
+      <span class="badge bg-primary rounded-pill">{{game.cantidad}}</span>
+    </li>
+</ol>

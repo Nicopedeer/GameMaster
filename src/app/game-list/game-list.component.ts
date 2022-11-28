@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../Game';
+import { GamesCartService } from '../games-cart.service';
 
 @Component({
   selector: 'app-game-list',
@@ -8,7 +9,9 @@ import { Game } from '../Game';
 })
 export class GameListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private  carrito : GamesCartService ) { 
+    
+  }
   games : Game [] = [
     {
       nombre : "Uncharted 4",
@@ -36,11 +39,19 @@ export class GameListComponent implements OnInit {
       stock : 0,
       oferta : false,
       cantidad : 0
-    }
+    },
   ]
   ngOnInit(): void {
   }
   
+  anadirAlCarrito(game: Game) : void{
+
+   this.carrito.anadirAlCarrito(game);
+    game.stock -= game.cantidad;
+    game.cantidad = 0;
+    if(game.stock == 0)
+    game.oferta = false;
+  }
 
 }
 
