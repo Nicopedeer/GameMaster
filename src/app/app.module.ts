@@ -10,6 +10,7 @@ import { GameMasterAboutComponent } from './game-master-about/game-master-about.
 import { CarritoComponent } from './carrito/carrito.component';
 import { GameMasterGamesComponent } from './game-master-games/game-master-games.component';
 import { InputNumberComponent } from './input-number/input-number.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { InputNumberComponent } from './input-number/input-number.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
